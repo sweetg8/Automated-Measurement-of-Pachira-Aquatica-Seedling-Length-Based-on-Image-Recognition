@@ -1,0 +1,33 @@
+# === 忽略大檔資料 ===
+data1/*
+!data1/README.dataset
+data2/*
+!data2/README.dataset
+datatest/
+label-studio-ml-backend/
+output/
+runs/*
+
+!runs/pose/train2/
+!runs/pose/train3/
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === 系統檔 ===
+.DS_Store
+Thumbs.db
+
+# === 開發環境設定 ===
+.vscode/
+.idea/
+.env
+
+
