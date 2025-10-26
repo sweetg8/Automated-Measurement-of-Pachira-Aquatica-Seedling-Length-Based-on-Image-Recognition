@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # === 忽略大檔資料 ===
 data1/*
 !data1/README.dataset
@@ -12,10 +13,13 @@ runs/*
 !runs/pose/train3/
 
 # === Python ===
+=======
+# ===== Python / Anaconda =====
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+<<<<<<< HEAD
 *.log
 
 # === Jupyter ===
@@ -31,3 +35,69 @@ Thumbs.db
 .env
 
 
+=======
+*.pkl
+*.log
+*.tmp
+
+# Jupyter notebooks checkpoint
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+env.bak/
+*.conda/
+*.egg-info/
+
+# ===== Conda & Pip =====
+# Environment file caches
+*.yaml~
+*.yml~
+*.lock
+# Local package cache
+pip-wheel-metadata/
+*.egg
+
+# ===== Data / Models =====
+# Raw data or large assets (keep only README)
+data/
+!data/README.md
+!data/samples/**
+
+# Trained weights and outputs
+models/
+!models/README.md
+output/
+runs/
+checkpoints/
+*.pt
+*.onnx
+*.engine
+*.zip
+*.tar.gz
+
+# ===== Docker =====
+# Ignore build cache and local volumes
+docker/*.log
+docker/*.tar
+docker-compose.override.yml
+
+# ===== OS-specific =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.code-workspace
+
+# ===== Misc =====
+.env
+.env.*
+*.bak
+*.swp
+*.swo
+>>>>>>> main
