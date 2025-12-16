@@ -2,7 +2,7 @@
 
 This repository uses **YOLOv11-pose** to detect 8 keypoints (4 on the seedling + 4 on a reference object) of *Pachira aquatica* seedlings. The system converts images into measurable geometric information and automatically outputs segment and total length (px → cm/mm), together with visualization overlays and evaluation scripts, forming a fully reproducible end-to-end measurement pipeline.
 
----
+
 
 ## 1. Problem & Motivation
 
@@ -16,7 +16,7 @@ This project replaces manual measurement with **keypoint-based detection**:
 
 The goal is to reduce labor, improve consistency, and provide a clear and reproducible digital pipeline from image to measurement.
 
----
+
 
 ## 2. Demo (Visualization)
 
@@ -32,7 +32,7 @@ The overlay shows:
 * Lines representing the measured segments.
 * Text annotations summarizing estimated lengths.
 
----
+
 
 ## 3. Method Overview (Pipeline)
 
@@ -43,7 +43,7 @@ High-level pipeline:
 3. **Length Computation**: Segment and total lengths along the seedling are computed from the keypoints.
 4. **Outputs**: Numerical results (e.g., JSON/CSV) and visual overlays (images) for downstream use in grading, QC, or research.
 
----
+
 
 ## 4. Repository Structure
 
@@ -70,7 +70,7 @@ High-level pipeline:
                                    # Experimental / test scripts (not required for the main pipeline)
 ```
 
----
+
 
 ## 5. Environment Setup (Anaconda)
 
@@ -90,7 +90,7 @@ Replace `<your_env_name>` with the name specified inside `environment.yml` (e.g.
 
 If you prefer manual installation with `pip`, you can inspect `environment.yml` and install the listed packages, but for exact reproducibility the Conda environment is strongly recommended.
 
----
+
 
 ## 6. Quickstart
 
@@ -114,7 +114,7 @@ Perform scale calibration using reference keypoints.
 
 Directly output predicted segment and total length results (and, optionally, visualization images).
 
-6.2 Training (Keypoint Model)
+### 6.2 Training (Keypoint Model)
 
 Train YOLOv11-pose on the Pachira seedling dataset:
 
@@ -127,7 +127,7 @@ After training, outputs (including logs, plots, and model weights) will usually 
 If you want to run keypoint detection separately (without length computation):
 
 python predict.py
-# or
+or
 python predict2.py
 
 Typical outputs:
@@ -153,7 +153,7 @@ These scripts:
 * Compute segment and total length for each seedling.
 * Save numerical results and, optionally, overlay images.
 
----
+
 
 ### 6.5 Evaluation
 
@@ -172,7 +172,7 @@ python mAPgogo.py
 
 These scripts are intended mainly for research and result visualization.
 
----
+
 
 ## 7. Script Guide (What Each Script Does)
 
@@ -217,7 +217,7 @@ These scripts are intended mainly for research and result visualization.
 * **`test.py`, `pretest.py`, `modeltest.py`, `readimage.py`, `index.py`, `line1.py`**
   Experimental or legacy test scripts used during development. They are not part of the main pipeline but may be helpful as references.
 
----
+
 
 ## 8. Keypoints Convention (Recommended Documentation)
 
@@ -228,7 +228,7 @@ This project uses 8 keypoints per object:
 
 It is strongly recommended to document, in your paper/report or an additional figure, the exact anatomical meaning of each keypoint (e.g., cut surface of the root, nodes, apical bud, and four corners of the reference object). This ensures that annotations and measurements remain consistent and reproducible.
 
----
+
 
 ## 9. Outputs
 
@@ -245,7 +245,7 @@ Typical outputs include:
 
 Depending on how you configure the scripts, you may also generate JSON/CSV files containing per-image length measurements.
 
----
+
 
 ## 10. Reproducibility Checklist
 
@@ -257,7 +257,7 @@ To make experiments reproducible and comparable:
 * Split training/validation/test sets **by seedling identity**, not just by image, so that images of the same physical plant do not leak into both training and test sets.
 
 
----
+
 
 ## 11. License
 
